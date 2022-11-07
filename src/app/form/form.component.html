@@ -1,0 +1,79 @@
+<form #f="ngForm">
+  <h1>Ajouter Vedos </h1>
+  <div class="formcontainer">
+    <hr/>
+    <div class="container">
+      <label ><strong>id</strong></label>
+      <input type="number" placeholder="Enter id"  [(ngModel)]="vedos.id" #aaa="ngModel" name="id" required>
+      <div class="alert alert-danger" *ngIf="aaa.invalid && aaa.touched">
+        <p *ngIf="aaa.hasError('required')">id is required</p>
+
+      </div>
+
+      <label ><strong>title</strong></label>
+      <input type="text" placeholder="Enter title"  pattern="[A-Z]+[a-zA-Z]*" [(ngModel)]="vedos.title" #title="ngModel" name="titre" required>
+      <div class="alert alert-danger" *ngIf="title.invalid ">
+        <p *ngIf="title.hasError('required')">title is required</p>
+        <p *ngIf="title.hasError('pattern')">erreur pattern</p>
+      </div>
+      <label ><strong>genre</strong></label>
+      <div class="form-check">
+        <input class="form-check-input"  name="genre"   #x="ngModel" required  value="action" [(ngModel)]="vedos.genre"  type="radio"    >
+        <label class="form-check-label" >
+          action
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input"  name="genre"   #x="ngModel" required  value="documentaire"  [(ngModel)]="vedos.genre"  type="radio"    >
+        <label class="form-check-label" >
+          documentaire
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input"  name="genre"   #x="ngModel" required  value="comedie"  [(ngModel)]="vedos.genre"  type="radio"    >
+        <label class="form-check-label" >
+          comedie
+        </label>
+      </div>
+
+
+      <div class="alert alert-danger" *ngIf="x.invalid">
+      <p *ngIf="x.hasError('required')  ">genre is required</p>
+
+    </div>
+
+
+
+
+      <label ><strong>public</strong></label>
+
+<div    >
+
+
+      <div class="form-check">
+        <input class="form-check-input"  name="public"   #a="ngModel" required  [value]="true" [(ngModel)]="vedos.public "  type="radio"    >
+        <label class="form-check-label" >
+          Oui
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input"  name="public"  #b="ngModel"  required [value]="false"   [(ngModel)]="vedos.public" type="radio"   >
+        <label class="form-check-label" >
+          Non
+        </label>
+      </div>
+
+  <div class="alert alert-danger" *ngIf="a.invalid && b.invalid ">
+    <p *ngIf="a.hasError('required') && b.hasError('required')">public is required</p>
+
+  </div>
+
+
+      </div>
+    <div class="aa">
+      <button class="form-control"  (click)="saveStage()" [disabled]="f.invalid" >{{actionn}}</button>
+    </div>
+
+    </div>
+  </div>
+</form>

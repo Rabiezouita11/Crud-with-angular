@@ -1,0 +1,32 @@
+{
+  "Vedos": [
+    {
+      "title": "Elifkef",
+      "id": 1,
+      "genre": "comedie",
+      "public": false,
+      "nbrShared": 0
+    },
+    {
+      "title": "Elifkef",
+      "id": 2,
+      "genre": "action",
+      "public": true,
+      "nbrShared": 0
+    },
+    {
+      "title": "Elifkef",
+      "id": 3,
+      "genre": "comedie",
+      "public": true,
+      "nbrShared": 0
+    },
+    {
+      "title": "Elifkef",
+      "id": 4,
+      "genre": "documentaire",
+      "public": true,
+      "nbrShared": 100
+    }
+  ]
+}
